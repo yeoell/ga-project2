@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request, session
 import psycopg2
 import os
 
@@ -14,7 +14,7 @@ def index():
 
 @app.route('/recipe_index')
 def recipe_index():
-    conn = psycopg2.connect('dbname=recipe_box')
+    conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
     cur.execute('SELECT name, image_url FROM recipes')
     returned = cur.fetchall()
@@ -22,6 +22,10 @@ def recipe_index():
     print(results)
     conn.close()
     return render_template('recipe_index.html', results=results)
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
