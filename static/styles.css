@@ -76,6 +76,11 @@ form {
 }
 
 /* login */
+.login-wrapper {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
 .login {
   display: flex;
   flex-direction: row;
