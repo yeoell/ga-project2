@@ -1,7 +1,6 @@
 {% extends 'base.html' %} {% block main %}
-
 <div class="wrapper">
-  <h2 class="hdr">Recipe index</h2>
+  <h2 class="hdr">Search results</h2>
   <div class="search-bar">
     <form autocomplete="off" method="GET" action="/search_results" style="padding: 5px">
       <input
@@ -26,5 +25,4 @@
     {% endfor %}
   </div>
 </div>
-
 {% endblock %}

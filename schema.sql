@@ -2,6 +2,14 @@ DROP TABLE IF EXISTS recipes;
 
 CREATE TABLE recipes (
     id serial PRIMARY KEY,
-    name varchar(50) NOT NULL,
-    image_url varchar(200),
+    name text NOT NULL,
+    image_url varchar(200)
+);
+
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY, 
+    email TEXT, 
+    first_name TEXT, 
+    last_name TEXT,
+    password_hash TEXT
 );

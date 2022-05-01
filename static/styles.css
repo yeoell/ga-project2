@@ -1,54 +1,95 @@
-* {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  max-width: 1000px;
-  margin: 0 auto;
-  font-weight: 100;
+/* search bar */
+.search-bar {
+  margin-top: 10px;
 }
 
-/* nav */
-.header .cntnr-hdr {
+/* body */
+.recipe-container {
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.index {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.index-img {
+  display: inline;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+/* image and search */
+.hero {
+  background: url(https://cdn.pixabay.com/photo/2017/12/29/19/37/food-3048440_960_720.jpg) no-repeat
+    50% 50%;
+  background-size: cover;
+  /* color: #fff; */
+  padding: 100px 20px 400px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hero-container {
+  width: 35%;
+  height: auto;
+  top: 57%;
+  left: 33%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+}
+
+.hero-hdr {
+  margin: 10px 0 5px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+/* wrapper */
+.wrapper {
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 10px;
+}
+
+.hdr {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+/* login */
+.login {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  border-bottom: solid 2px #aaa;
-  padding: 20px 0 0 20px;
+  padding-top: 20px;
+  align-items: right;
 }
 
-.header nav ul {
-  margin: 0;
-  padding: 0;
+.login-form {
+  margin-bottom: 5px;
 }
 
-.header nav ul li {
-  display: inline-block;
-  font-weight: 200;
-  text-align: center;
-}
-
-.header nav ul li:hover {
-  cursor: pointer;
-}
-
-#navbar a {
-  display: block;
-  color: #000;
-  text-align: center;
-  padding: 20px 10px 9px;
-  text-decoration: none;
-}
-
-nav ul li a {
-  font-size: 16px;
-  text-decoration: none;
-}
-
-h1 {
-  padding: 10px;
-}
-
-footer {
-  border-top: solid 2px #aaa;
-  margin-top: 10px;
-}
+/* .food,
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+} */

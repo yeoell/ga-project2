@@ -2,12 +2,17 @@
 
 <div class="hero">
   <div class="hero-container">
-    <h2></h2>
-  </div>
-  <div class="search">
-    <form method="GET" action="/results">
-      <input type="text" name="recipe" placeholder="Search by recipe or ingredient" />
-    </form>
+    <h2 class="hero-hdr">Hungry for more?</h2>
+    <div>
+      <form autocomplete="off" method="GET" action="/search_results">
+        <input
+          type="text"
+          name="recipe"
+          placeholder="Search by recipe or ingredient"
+          style="width: 50%"
+        />
+      </form>
+    </div>
   </div>
 </div>
 
