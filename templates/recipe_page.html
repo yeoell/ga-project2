@@ -2,7 +2,30 @@
 
 <div class="wrapper">
   <h2 class="hdr">{{recipe_name}}</h2>
+  <div class="search-bar">
+    <form autocomplete="off" method="GET" action="/search_results" style="padding: 5px">
+      <input
+        type="text"
+        name="recipe"
+        placeholder="Search by recipe or ingredient"
+        style="width: 190%"
+      />
+    </form>
+  </div>
 </div>
-<img src="{{recipe_image}}" width="30%" />
+
+<div class="recipe-container">
+  <div class="page-grid">
+    <img src="{{recipe_image}}" style="width: 70%" />
+    <div>
+      <h3>ingredients</h3>
+      <p>{{recipe_ingredients}}</p>
+    </div>
+    <div>
+      <h3>method</h3>
+      <p>{{recipe_method}}</p>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -8,3 +8,34 @@ INSERT INTO recipes (name, image_url) VALUES ('lemon tart', 'https://images.pexe
 INSERT INTO recipes (name, image_url) VALUES ('brownies', 'https://cdn.pixabay.com/photo/2015/03/11/12/42/chocolate-brownies-668624_960_720.jpg');
 
 INSERT INTO users (email, first_name, last_name, password_hash) VALUES ('eleanoryeoell@icloud.com', 'Eleanor', 'Yeoell', '$2b$12$j8Fsu6HKaIblDwQyHebo8u2pxtl.4LO1bu/gEyQw6lPcEbYT6Co42');
+
+INSERT INTO recipe_detail (ingredients, method) VALUES ('Base
+1 cup plain flour
+½ cup brown sugar, loosely packed
+½ cup desiccated coconut
+125g butter, melted
+
+Filling
+60g butter, melted
+2 tablespoons golden syrup
+395g condensed milk
+
+Topping
+60g milk chocolate
+60g dark chocolate
+1 tablespoon vegetable oil', 'Base
+1.	Preheat oven to 160 degrees, fan-forced. Line a 28cm x 18cm tin with baking paper
+2.	Sift flour into a mixing bowl, then stir in sugar and coconut
+3.	Mix in melted butter
+4.	Press into tin and bake for 15 minutes, or until golden
+
+Caramel filling
+5.	Melt butter in a small saucepan over low heat
+6.	Stir in golden syrup and condensed milk
+7.	Pour caramel mixture over cooked base, and return to oven for another 8 minutes, or until bubbles form over the top
+8.	Set aside until cold
+
+Chocolate topping
+9.	Melt chocolate and oil over a saucepan of boiling water
+10.	Pour over caramel filling and chill
+11.	Once set, cut into pieces');

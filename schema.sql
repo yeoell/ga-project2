@@ -13,3 +13,9 @@ CREATE TABLE users(
     last_name TEXT,
     password_hash TEXT
 );
+
+CREATE TABLE recipe_detail(
+    id SERIAL PRIMARY KEY, 
+    ingredients TEXT, 
+    method TEXT
+);

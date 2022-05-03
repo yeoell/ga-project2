@@ -2,12 +2,21 @@
 <div class="login-wrapper">
   <h2 class="hdr">Log in</h2>
 
+  <!-- {% if not session['email'] %}
+
+  <section class="login">{{message}}</section>
+
+  {% endif %} -->
+
   <div>
     <form autocomplete="off" action="/login" method="POST">
       email: <input class="login-form" type="text" name="email" /> <br />
-      <!-- password: <input class="login-form" type="text" name="password" /><br /> -->
+      password: <input class="login-form" type="text" name="password" /><br />
       <input type="submit" value="Log in" />
     </form>
+  </div>
+  <div>
+    <p>Don't have an account? <a href="/create_account">Create one</a></p>
   </div>
 </div>
 

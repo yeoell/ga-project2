@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.index {
+.page-grid {
   padding-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,7 +47,7 @@ li {
 .hero-container {
   width: 35%;
   height: auto;
-  top: 57%;
+  top: 33%;
   left: 33%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.8);
@@ -93,8 +93,36 @@ form {
   margin-bottom: 5px;
 }
 
-/* .food,
-.btn {
+/* recipe page */
+.recipe-wrapper {
+  width: 75%;
+  display: grid;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.food {
   padding-top: 5px;
   padding-bottom: 5px;
-} */
+}
+
+/* signup page */
+.su-hero {
+  background: url(https://cdn.pixabay.com/photo/2015/04/28/20/24/wood-744306_960_720.jpg) no-repeat
+    50% 50%;
+  background-size: cover;
+  /* color: #fff; */
+  padding: 100px 20px 400px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sign-up-container {
+  width: 35%;
+  height: auto;
+  /* top: 33%; */
+  left: 33%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+}
