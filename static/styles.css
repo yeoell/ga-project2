@@ -106,6 +106,23 @@ form {
   padding-bottom: 5px;
 }
 
+.process {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 10px;
+  border-top: solid 2px #aaa;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: 15px;
+}
+
 /* signup page */
 .su-hero {
   background: url(https://cdn.pixabay.com/photo/2015/04/28/20/24/wood-744306_960_720.jpg) no-repeat
@@ -118,10 +135,10 @@ form {
 }
 
 .sign-up-container {
-  width: 35%;
+  width: 40%;
   height: auto;
   /* top: 33%; */
-  left: 33%;
+  left: 30%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 auto;

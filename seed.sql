@@ -23,7 +23,8 @@ Filling
 Topping
 60g milk chocolate
 60g dark chocolate
-1 tablespoon vegetable oil', 'Base
+1 tablespoon vegetable oil', '
+Base
 1.	Preheat oven to 160 degrees, fan-forced. Line a 28cm x 18cm tin with baking paper
 2.	Sift flour into a mixing bowl, then stir in sugar and coconut
 3.	Mix in melted butter
@@ -39,3 +40,10 @@ Chocolate topping
 9.	Melt chocolate and oil over a saucepan of boiling water
 10.	Pour over caramel filling and chill
 11.	Once set, cut into pieces');
+
+INSERT INTO recipe_detail (ingredients, method) VALUES ('chocolate ganache cake ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');
+INSERT INTO recipe_detail (ingredients, method) VALUES ('chocolate chip cookies ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');
+INSERT INTO recipe_detail (ingredients, method) VALUES ('chocolate mousse ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');
+INSERT INTO recipe_detail (ingredients, method) VALUES ('cheesecake ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');
+INSERT INTO recipe_detail (ingredients, method) VALUES ('lemon tart ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');
+INSERT INTO recipe_detail (ingredients, method) VALUES ('brownies ingredients', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ea iste iusto a magnam consequuntur deserunt at odio assumenda quis blanditiis aut, commodi perferendis itaque fugit veritatis cum earum? Rem doloremque placeat labore fugit recusandae reprehenderit eius blanditiis, et sunt!');

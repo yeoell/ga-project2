@@ -18,17 +18,17 @@ def search_results():
     search_query = request.args.get('recipe')
     
     db_query = "%"+search_query+"%"
-    print(db_query)
+    # print(db_query)
 
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
     cur.execute('SELECT name, image_url FROM recipes WHERE name LIKE %s', [db_query])
     results = cur.fetchall()
-    print(results)
+    # print(results)
     conn.close()
 
     if not results: 
-        return render_template('search_results.html', results='no results')
+        return render_template('search_results.html', message='No results')
     else:
         return render_template('search_results.html', results=results)
 
@@ -70,11 +70,13 @@ def create_account_action():
     first_name = request.form.get('first-name')
     last_name = request.form.get('surname')
     password = request.form.get('password')
+    # print(f'user details {email} {password}')
     password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+    # print(password_hash)
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
-    cur.execute('INSERT INTO users (email, first_name, last_name, password_hash) VALUES (%s, %s, %s, %s)', [email], [first_name], [last_name], [password_hash])
-    # results = cur.fetchall()
+    cur.execute('INSERT INTO users (email, first_name, last_name, password_hash) VALUES (%s, %s, %s, %s)', [email, first_name, last_name, password_hash])
+    conn.commit()
     conn.close()
 
     return redirect('/login')
@@ -93,7 +95,6 @@ def login_action():
     cur.execute('SELECT * FROM users WHERE email = %s', [email])
     results = cur.fetchall()
     print(results)
-    # users = {}
     conn.close()
 
     if not results:
