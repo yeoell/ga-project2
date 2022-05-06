@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block main %}
+<div class="su-hero">
+  <div class="sign-up-container">
+    <h2 class="hero-hdr">
+      Are you sure you want to remove <span style="text-transform: capitalize">{{name}}</span> from
+      the menu?
+    </h2>
+    <div>
+      <form action="/delete_recipe_action" method="POST">
+        <input type="hidden" name="id" value="{{id}}" />
+        <input class="btn" type="submit" value="Yes" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

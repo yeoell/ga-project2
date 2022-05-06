@@ -9,7 +9,7 @@ INSERT INTO recipes (name, image_url) VALUES ('brownies', 'https://cdn.pixabay.c
 
 INSERT INTO users (email, first_name, last_name, password_hash) VALUES ('eleanoryeoell@icloud.com', 'Eleanor', 'Yeoell', '$2b$12$j8Fsu6HKaIblDwQyHebo8u2pxtl.4LO1bu/gEyQw6lPcEbYT6Co42');
 
-INSERT INTO recipe_detail (ingredients, method) VALUES ('Base
+INSERT INTO recipes (ingredients, method) VALUES ('Base
 1 cup plain flour
 ½ cup brown sugar, loosely packed
 ½ cup desiccated coconut

@@ -2,6 +2,17 @@
 
 <p style="padding-top: 10px">
   Welcome back, <span style="text-transform: capitalize">{{name}}</span>
+
+
+
 </p>
+
+{% for result in results %} {% if email == result[3] %}
+
+<p style="margin-left: 15px; text-transform: capitalize;"><a href="/recipe_page/{{result[0]}}">{{result[0]}}</a> <a href="/delete_recipe/{{result[0]}}" style="text-transform:none">remove recipe</a></p>
+
+{% endif %} 
+{% endfor %} 
+<a href="/add_recipe">Add new recipe</a></li>
 
 {% endblock %}
