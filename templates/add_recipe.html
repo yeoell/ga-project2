@@ -5,10 +5,14 @@
     <h2 class="hdr">Add a new recipe</h2>
 
     <form autocomplete="off" action="/add_recipe_action" method="POST">
-      <div class="food">Recipe name <input name="name" type="text" /></div>
-      <div class="food">Ingredients <input name="ingredients" type="text" /></div>
-      <div class="food">Method <input name="method" type="text" /></div>
-      <div class="food">Image URL <input name="image_url" type="text" /> <br /></div>
+      <div class="food">
+        <input name="name" type="text" placeholder="Recipe name" />
+        <input name="image_url" type="text" placeholder="Image URL" /> <br />
+      </div>
+      <div class="food">
+        <input name="ingredients" type="text" placeholder="Ingredients" />
+        <input name="method" type="text" placeholder="Method" />
+      </div>
       <input type="submit" value="Save" />
     </form>
   </div>
