@@ -1,18 +1,27 @@
 {% extends 'base.html' %} {% block main %}
 
-<p style="padding-top: 10px">
-  Welcome back, <span style="text-transform: capitalize">{{name}}</span>
+<div class="pro-wrapper">
+  <h2 class="hdr">Welcome back, <span style="text-transform: capitalize">{{name}}</span></h2>
+  <div class="link-box">
+    <a href="/add_recipe">Add new recipe</a>
+  </div>
+</div>
 
+<div class="recipe-container">
+  Your recipes
+  <div class="user-grid">
+    {% for result in results %} {% if email == result[4] %}
 
+    <li>
+      <a href="/recipe_page/{{result[0]}}" class="name""
+        >{{result[0]}}</a
+      ><br />
+      <a href="/recipe_page/{{result[0]}}"><img class="index-img" src="{{result[1]}}" /></a><br />
+      <a href="/delete_recipe/{{result[0]}}" class="name"">remove recipe</a>
+    </li>
 
-</p>
-
-{% for result in results %} {% if email == result[3] %}
-
-<p style="margin-left: 15px; text-transform: capitalize;"><a href="/recipe_page/{{result[0]}}">{{result[0]}}</a> <a href="/delete_recipe/{{result[0]}}" style="text-transform:none">remove recipe</a></p>
-
-{% endif %} 
-{% endfor %} 
-<a href="/add_recipe">Add new recipe</a></li>
+    {% endif %} {% endfor %}
+  </div>
+</div>
 
 {% endblock %}

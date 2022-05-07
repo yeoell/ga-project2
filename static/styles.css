@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-top: solid 2px #aaa;
 }
 
 .page-grid {
@@ -26,6 +27,7 @@
   width: 200px;
   height: 150px;
   object-fit: cover;
+  margin-top: 5px;
 }
 
 li {
@@ -75,6 +77,11 @@ form {
   margin-bottom: 5px;
 }
 
+.name {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
 /* login */
 .login-wrapper {
   margin-left: 50px;
@@ -115,7 +122,6 @@ form {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin-top: 10px;
-  border-top: solid 2px #aaa;
 }
 
 pre {
@@ -142,4 +148,34 @@ pre {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 auto;
+}
+
+/* profile */
+.pro-wrapper {
+  width: 75%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 10px;
+}
+
+.link-box {
+  margin-top: 14px;
+}
+
+.user-grid {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* add page */
+.add-hero {
+  background: url(https://cdn.pixabay.com/photo/2021/08/27/22/29/eggs-6579677_1280.jpg) no-repeat
+    50% 50%;
+  background-size: cover;
+  /* color: #fff; */
+  padding: 100px 20px 400px;
+  text-align: center;
+  margin-top: 10px;
 }

@@ -1,8 +1,8 @@
 from flask import Flask, redirect, render_template, request, session
+from random import randint
 import psycopg2
 import bcrypt
 import os
-import random
 
 DATABASE_URL = os.environ.get('DATABASE_URL', 'dbname=recipe_box')
 SECRET_KEY = os.environ.get('SECRET KEY', 'pretend secret key for testing')
@@ -18,13 +18,11 @@ def index():
 def search_results():
     search_query = request.args.get('recipe')
     db_query = "%"+search_query+"%"
-    # print(db_query)
 
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
     cur.execute('SELECT name, image_url FROM recipes WHERE name LIKE %s', [db_query])
     results = cur.fetchall()
-    # print(results)
     conn.close()
 
     if not results: 
@@ -32,18 +30,23 @@ def search_results():
     else:
         return render_template('search_results.html', results=results)
 
-# @app.route('/randomiser')
-# def randomiser():
-#     search_query = request.args.get('recipe')
-#     db_query = "%"+search_query+"%"
+@app.route('/randomise')
+def randomiser():
+    
+    conn = psycopg2.connect(DATABASE_URL)
+    cur = conn.cursor()
+    cur.execute('SELECT name, ingredients, method FROM recipes ORDER BY random() LIMIT 1')
 
-#     conn = psycopg2.connect(DATABASE_URL)
-#     cur = conn.cursor()
-#     cur.execute('SELECT name, image_url FROM recipes WHERE name LIKE %s', [db_query])
-#     results = cur.fetchall()
-#     # print(results)
-#     conn.close()
+    results = cur.fetchall()
+    print(results)
+    conn.close()
 
+    for result in results:
+        name = result[0]
+        ingredients = result[1]
+        method = result[2]
+
+    return render_template('recipe_page.html', recipe_name=name, recipe_ingredients=ingredients, recipe_method=method)
 
 @app.route('/recipe_index')
 def recipe_index():
@@ -52,7 +55,6 @@ def recipe_index():
     cur.execute('SELECT name, image_url FROM recipes')
     returned = cur.fetchall()
     results = sorted(returned)
-    # print(results)
     conn.close()
     return render_template('recipe_index.html', results=results)
 
@@ -69,7 +71,6 @@ def recipe_page(name):
         image = result[1]
         ingredients = result[2]
         method = result[3]
-        # print(result)
 
     return render_template('recipe_page.html', recipe_name=name, recipe_image=image, recipe_ingredients=ingredients, recipe_method=method)
 
@@ -83,9 +84,8 @@ def create_account_action():
     first_name = request.form.get('first-name')
     last_name = request.form.get('surname')
     password = request.form.get('password')
-    # print(f'user details {email} {password}')
     password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-    # print(password_hash)
+
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
     cur.execute('INSERT INTO users (email, first_name, last_name, password_hash) VALUES (%s, %s, %s, %s)', [email, first_name, last_name, password_hash])
@@ -103,7 +103,7 @@ def create_account_action():
         password_hash = results[0][4]
         valid = bcrypt.checkpw(password.encode(), password_hash.encode())
         user_name = results[0][2]
-        # print(f'{user_name}, password valid')
+        
         session['email'] = email
         session['name'] = user_name
     login(email)
@@ -122,7 +122,6 @@ def login_action():
     cur = conn.cursor()
     cur.execute('SELECT * FROM users WHERE email = %s', [email])
     results = cur.fetchall()
-    # print(results)
     conn.close()
 
     if not results:
@@ -153,7 +152,7 @@ def profile():
     name = session['name']
     conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
-    cur.execute('SELECT name, user_id, recipes.id, email FROM recipes JOIN users ON recipes.user_id = users.id')
+    cur.execute('SELECT name, image_url, user_id, recipes.id, email FROM recipes JOIN users ON recipes.user_id = users.id')
     results = cur.fetchall()
     conn.close()
     return render_template('profile.html', email=email, name=name, results=results)
@@ -164,7 +163,7 @@ def delete_recipe(name):
     cur = conn.cursor()
     cur.execute('SELECT id, name FROM recipes WHERE name = %s', [name])
     results = cur.fetchall()
-    # print(results)
+    
     for result in results:
         recipe_id = result[0]
         recipe_name = result[1]
