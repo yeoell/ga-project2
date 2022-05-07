@@ -2,7 +2,7 @@
 
 ## [OnlyFlans](https://calm-citadel-47919.herokuapp.com/)
 
-![landing page](/landing.png)
+![landing page](/static/landing.png)
 
 ## About the project
 
